@@ -8,6 +8,10 @@ st.header("Upload your Excel files to begin the merging process.")
 
 st.markdown("""
 This application merges tide data with temperature data.
+
+**How it works:**
+For each tide entry (specifically, 'Preia-Mar' entries), the application finds the *nearest* temperature reading from each of your temperature data sheets within a **1-hour tolerance**. This means if a temperature reading is more than 1 hour away from a tide entry, it will not be merged.
+
 Please follow these steps:
 
 1.  **Upload Tide Data File:**
