@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import io
+from streamlit_mermaid import st_mermaid
 
 st.set_page_config(layout="wide")
 st.title("Temperature and Tide Data Merger")
@@ -15,8 +16,7 @@ For each tide entry (specifically, 'Preia-Mar' entries), the application finds t
 """)
 
 st.subheader("Application Workflow")
-st.markdown("""
-```mermaid
+st_mermaid("""
 graph TD
     A[Start] --> B{Upload Tide Data File};
     B --> C{Upload Temperature Data File};
@@ -51,7 +51,6 @@ graph TD
         H1 --> H2[Direction: Nearest];
         H2 --> H3[Tolerance: 1 Hour];
     end
-```
 """)
 
 st.markdown("""
