@@ -111,7 +111,7 @@ if tide_file and temp_file:
                 left_on='Mares_DateTime',
                 right_on='Temp_DateTime',
                 direction='nearest',
-                tolerance=pd.Timedelta('1 day')
+                tolerance=pd.Timedelta('1 hour')
             )
             merged_sheet_df['Source_Temp_Sheet'] = sheet_name
             merged_results[sheet_name] = merged_sheet_df
