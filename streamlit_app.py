@@ -14,45 +14,7 @@ For each tide entry (specifically, 'Preia-Mar' entries), the application finds t
 
 """)
 
-st.subheader("Application Workflow")
-st.markdown("""
-```mermaid
-graph TD
-    A[Start] --> B{Upload Tide Data File};
-    B --> C{Upload Temperature Data File};
-    C --> D{Both Files Uploaded?};
-    D -- No --> B;
-    D -- Yes --> E[Process Tide Data];
-    E --> F[Process Temperature Data (per sheet)];
-    F --> G{Remove Duplicates & Validate Columns};
-    G --> H{Merge Tide & Temp Data (per sheet)};
-    H --> I[Collect Merged Sheets];
-    I --> J[Generate Multi-Sheet Excel File];
-    J --> K[Provide Download Button];
-    K --> L[End];
 
-    subgraph Tide Data Processing
-        E --> E1[Read First Sheet];
-        E1 --> E2[Filter for 'Preia-Mar'];
-        E2 --> E3[Create 'Mares_DateTime'];
-        E3 --> E4[Sort by 'Mares_DateTime'];
-    end
-
-    subgraph Temperature Data Processing
-        F --> F1[Read All Sheets];
-        F1 --> G;
-        G --> G1[Discard 'ficheiro.origem'];
-        G1 --> G2[Create 'Temp_DateTime'];
-        G2 --> G3[Sort by 'Temp_DateTime'];
-    end
-
-    subgraph Merging
-        H --> H1[Perform pd.merge_asof];
-        H1 --> H2[Direction: Nearest];
-        H2 --> H3[Tolerance: 1 Hour];
-    end
-```
-""")
 
 st.markdown("""
 Please follow these steps:
