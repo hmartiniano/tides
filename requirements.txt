@@ -2,4 +2,3 @@ streamlit
 pandas
 openpyxl
 XlsxWriter
-streamlit-mermaid
