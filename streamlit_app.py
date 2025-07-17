@@ -33,17 +33,17 @@ graph TD
 
     subgraph Tide Data Processing
         E --> E1[Read First Sheet];
-        E1 --> E2[Filter for 'Preia-Mar'];
-        E2 --> E3[Create 'Mares_DateTime'];
-        E3 --> E4[Sort by 'Mares_DateTime'];
+        E1 --> E2[Filter for "Preia-Mar"];
+        E2 --> E3[Create "Mares_DateTime"];
+        E3 --> E4[Sort by "Mares_DateTime"];
     end
 
     subgraph Temperature Data Processing
         F --> F1[Read All Sheets];
         F1 --> G;
-        G --> G1[Discard 'ficheiro.origem'];
-        G1 --> G2[Create 'Temp_DateTime'];
-        G2 --> G3[Sort by 'Temp_DateTime'];
+        G --> G1[Discard "ficheiro.origem"];
+        G1 --> G2[Create "Temp_DateTime"];
+        G2 --> G3[Sort by "Temp_DateTime"];
     end
 
     subgraph Merging
